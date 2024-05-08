@@ -1,9 +1,8 @@
 import React, { Suspense } from "react";
 
-const HomeModule = React.lazy(() => {
-  return new Promise((resolve) => setTimeout(resolve, 2000)).then(() =>
-    import("./components/HomeModule")
-  );
+const HomeModule = React.lazy(async () => {
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+  return await import("./components/HomeModule");
 });
 
 const Home = () => {
